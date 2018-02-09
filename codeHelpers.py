@@ -60,10 +60,10 @@ def test(testResult, name):
     Returns 1 and 0 so that the 1s can be summed to give a mark.
     """
     if testResult:
-        print(Fore.GREEN + "✔ " + name + Style.RESET_ALL)
+        print((Fore.GREEN + "✔ " + name + Style.RESET_ALL))
         return 1
     else:
-        print(Fore.RED + "✘ " + name + Style.RESET_ALL)
+        print((Fore.RED + "✘ " + name + Style.RESET_ALL))
         return 0
 
 
@@ -82,7 +82,7 @@ def test_flake8(fileName):
     if report.total_errors == 0:
         return True
     else:
-        print report.total_errors
+        print(report.total_errors)
         return False
 
 
@@ -97,9 +97,9 @@ def test_pydocstyle(fileName, flags="-e"):
         child = subprocess.Popen(["pydocstyle", file_path, flags],
                                  stdout=subprocess.PIPE)
         streamdata = child.communicate()[0]
-        print("streamdata", streamdata)  # I don't know what streamdata is for
+        print(("streamdata", streamdata))  # I don't know what streamdata is for
         rc = child.returncode
-        print("returncode", rc)
+        print(("returncode", rc))
         if rc == 0:
             print("all good")
             return True
@@ -107,10 +107,10 @@ def test_pydocstyle(fileName, flags="-e"):
             print("all good, I think")
             return True
         else:
-            print("U haz docstring errorz" + grumpy())
+            print(("U haz docstring errorz" + grumpy()))
             return False
     except Exception as e:
-        print("failed to doc check", e)
+        print(("failed to doc check", e))
         return False
 
 
@@ -127,15 +127,15 @@ def ex_runs(path, exNumber, weekNumber):
 
 def syntax_error_message(exNumber, e):
     """Give a readable error message."""
-    print('\n{s:{c}^{n}}\n{s:{c}^{n}}'.format(n=50, c='*', s=""))
-    print("There is a syntax error in exercise{}\n{}".format(exNumber, str(e)))
+    print(('\n{s:{c}^{n}}\n{s:{c}^{n}}'.format(n=50, c='*', s="")))
+    print(("There is a syntax error in exercise{}\n{}".format(exNumber, str(e))))
     print("WARNING: there might be more tests, but they won't run")
-    print("until you fix the syntax errors in exercise{}.py".format(exNumber))
-    print('{s:{c}^{n}}\n{s:{c}^{n}}\n'.format(n=50, c='*', s=""))
+    print(("until you fix the syntax errors in exercise{}.py".format(exNumber)))
+    print(('{s:{c}^{n}}\n{s:{c}^{n}}\n'.format(n=50, c='*', s="")))
 
 
 def completion_message(message, width):
-    u"""Print an obvious message.
+    """Print an obvious message.
 
     Example:
     In [5]: completion_message("this is the message", 30)
@@ -148,9 +148,9 @@ def completion_message(message, width):
     cap = '{start}{s:{c}^{n}}{end}'.format(n=width, c='*', s="",
                                            start=Fore.GREEN,
                                            end=Style.RESET_ALL)
-    print cap + "\n"
-    print(Fore.GREEN + "✔ " + message + Style.RESET_ALL)
-    print "\n" + cap
+    print(cap + "\n")
+    print((Fore.GREEN + "✔ " + message + Style.RESET_ALL))
+    print("\n" + cap)
 
 
 def nyan_cat(block='█'):

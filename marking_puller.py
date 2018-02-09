@@ -5,10 +5,10 @@ This pulls the latest copy of all the repos
 It can clone new repos if you set THERE_ARE_NEW_STUDENTS to true
 """
 
-from __future__ import division
-from __future__ import print_function
-from StringIO import StringIO
-from codeHelpers import RunCmd
+
+
+from io import StringIO
+from .codeHelpers import RunCmd
 from datetime import datetime
 from itertools import repeat
 import git
@@ -222,13 +222,13 @@ def mark_work(dirList, week_number, root_dir, dfPlease=True, timeout=5):
     prepare_log(logfile_name)
     r = len(dirList)  # for repeat count
 
-    results = map(test_in_clean_environment,  # Function name
+    results = list(map(test_in_clean_environment,  # Function name
                   dirList,  # student_repo
                   repeat(root_dir, r),  # root_dir
                   repeat(week_number, r),  # week_number
                   repeat(logfile_name, r),  # logfile_name
                   repeat(timeout, r)  # timeout
-                  )
+                  ))
 
     resultsDF = pd.DataFrame(results)
     csv_path = "csv/week{}marks.csv".format(week_number)

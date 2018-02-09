@@ -25,12 +25,12 @@ def get_the_updates():
         save_path = "./" + f
         if not os.path.isfile(save_path) and f is not "":
             url = base + f
-            print("downloading", url)
+            print(("downloading", url))
             download_and_save(url, save_path)
         elif f is "":
             pass  # do nothing, it's padding
         else:
-            print("You already have {f}".format(f=f))
+            print(("You already have {f}".format(f=f)))
             print("If you really want to update that file, "
                   "delete it locally and rerun this script.")
 

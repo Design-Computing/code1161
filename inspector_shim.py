@@ -14,7 +14,7 @@ def do_the_test():
         r = inspect.getsourcelines(test.loops_7)
         return str(r)
     except Exception as e:
-        print e
+        print(e)
 
 
 temp_results = open('temp_inspect.json', 'w')

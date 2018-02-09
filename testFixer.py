@@ -34,6 +34,6 @@ def download_and_save(url, save_path):
 
 
 get_the_updates()
-print "Fingers crossed! Try the tests for week 3 now"
-print "Remember: the changes to the tests will need to be commited"
-print "          as well as your work."
+print("Fingers crossed! Try the tests for week 3 now")
+print("Remember: the changes to the tests will need to be commited")
+print("          as well as your work.")

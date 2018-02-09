@@ -10,14 +10,14 @@ users = data["payload"]["references"]["User"]
 posts = data["payload"]["references"]["Post"]
 
 usernames = {}
-for k in users.keys():
+for k in list(users.keys()):
     us = users[k]
     usernames[us["userId"]] = {"username": us["username"].encode('utf8'),
                                "name": us["name"].encode('utf8')}
-    template = u"{username}, {name}, {userId}"
-    print template.format(**us).encode('utf8')
+    template = "{username}, {name}, {userId}"
+    print(template.format(**us).encode('utf8'))
 
-for k in posts.keys():
+for k in list(posts.keys()):
     p = posts[k]
 
     tidyD = {}
@@ -27,8 +27,8 @@ for k in posts.keys():
     tidyD["creatorId"] = p["creatorId"]
     tidyD["firstPublishedAt"] = p["firstPublishedAt"]
     # print tidyD
-    template = (u"{title}, "
-                u"author: {username} - {name} ({creatorId}), "
-                u"pub Date {firstPublishedAt}")
+    template = ("{title}, "
+                "author: {username} - {name} ({creatorId}), "
+                "pub Date {firstPublishedAt}")
     details = template.format(**tidyD)
-    print details.encode('utf-8')
+    print(details.encode('utf-8'))

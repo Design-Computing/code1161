@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 """Run a lightweight test set on specific students."""
-from codeHelpers import RunCmd
+from .codeHelpers import RunCmd
 import os
 import time
 
@@ -20,17 +20,17 @@ for name in repos:
                 './test_shim.py',
                 "week{}.tests".format(week_number),
                 "../code1161StudentRepos/{}".format(name)]
-        print args
+        print(args)
         RunCmd(args, timeout_cap).Run()
 
         temp_results = open(os.path.join(LOCAL, 'temp_results.json'), 'r')
         results.append(temp_results.read())
         temp_results.close()
     except Exception as e:
-        print e
+        print(e)
     elapsed_time = time.time() - start_time
-    print "Time to test:", elapsed_time
+    print("Time to test:", elapsed_time)
     times.append({"name": name, "time": elapsed_time})
 
-print results
-print times
+print(results)
+print(times)
