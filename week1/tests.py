@@ -1,6 +1,5 @@
 """Do the work of checking the week's work."""
-from __future__ import division
-from __future__ import print_function
+
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
@@ -63,15 +62,16 @@ def theTests(path_to_code_to_check="."):
     path = "{}/week{}/".format(path_to_code_to_check, WEEK_NUMBER)
     testResults = []
     testResults.append(
-        test(isThereAnID(path),
-             "Exercise 1: Test that your VM is working"))
+        test(isThereAnID(path), "Exercise 1: Test that your VM is working"))
     testResults.append(
         test(isRequestsWorking(path),
              "Exercise 1: Test your connection to the internet"))
 
-    return {"of_total": len(testResults),
-            "mark": sum(testResults),
-            "results": testResults}
+    return {
+        "of_total": len(testResults),
+        "mark": sum(testResults),
+        "results": testResults
+    }
 
 
 if __name__ == "__main__":

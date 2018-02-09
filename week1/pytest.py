@@ -3,8 +3,7 @@
 It gets values from the filesystem and the internet
 to check that everything works.
 """
-from __future__ import division
-from __future__ import print_function
+
 import json
 import os
 import requests
