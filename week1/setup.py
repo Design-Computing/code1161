@@ -1,12 +1,11 @@
 import os
+# install virtualenv
 
-if not os.path.exists('./venv'):
-    # install virtualenv
-    os.system('pip install virtualenv')
-    # create virtualenv
-    os.system('virtualenv venv')
-    # activate the virtualenv
-    os.system('source venv/bin/activate')
-
-# install python ext
+# create virtualenv
+os.system('conda create -n codeenv python=3.6 anaconda')
+# activate the virtualenv
+os.system('source activate codeenv')
+# try and install requests
+os.system('pip install requests')
 os.system('code --install-extension ms-python.python')
+# install python ext
