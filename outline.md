@@ -41,15 +41,15 @@ Third will be a the Open Data Projects: a data analysis and story telling tellin
 
 #### Lecture
 
-<!--<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTH0wxz0Vy61NXaS6g2Nmot2w0qhhOkz1km_2g2TnrLGRyB0OBOlELz6uQ6_Sh5FYWkffY_KKECBpgF/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
--->
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTH0wxz0Vy61NXaS6g2Nmot2w0qhhOkz1km_2g2TnrLGRyB0OBOlELz6uQ6_Sh5FYWkffY_KKECBpgF/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 #### Lab
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQED50HjjGZhZ8Nv_9m8dSij1-eVpzuT3jBh3Djd6axm6guCc0H9gWpk9OJwfSIfbIiwGOSPDDz75qG/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 - Software Checklist:
 
 	- Download and Install
 		- python3 from [https://www.anaconda.com/download/](https://www.anaconda.com/download/)
-			- ensure you install Python to path ![pathVar](/Users/ishaanvarshney/Downloads/PATH.PNG)
 		- visual studio code [https://www.anaconda.com/download/](https://code.visualstudio.com/download)
 		- github desktop [https://help.github.com/desktop/guides/getting-started-with-github-desktop/installing-github-desktop/](https://help.github.com/desktop/guides/getting-started-with-github-desktop/installing-github-desktop/)
 	
@@ -60,6 +60,7 @@ Third will be a the Open Data Projects: a data analysis and story telling tellin
 
 - Instructions:
 	- follow the slides:
+		- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQED50HjjGZhZ8Nv_9m8dSij1-eVpzuT3jBh3Djd6axm6guCc0H9gWpk9OJwfSIfbIiwGOSPDDz75qG/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 		
 Attempt exercises in scratch if you have finished.
 In the next hour we will familiarise ourselves with each bit of software we have installed and what purpose it serves in the course.
