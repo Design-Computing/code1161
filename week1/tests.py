@@ -2,9 +2,17 @@
 
 import sys
 import os
+import inspect
+from pathlib import Path
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from codeHelpers import completion_message
+from codeHelpers import nyan_cat
 from codeHelpers import test
+from codeHelpers import test_flake8
+from codeHelpers import ex_runs
 
+# from codeHelpers import test
+from week1 import exercise1
 WEEK_NUMBER = 1
 
 # the context of this file
@@ -12,67 +20,34 @@ LOCAL = os.path.dirname(os.path.realpath(__file__))
 # The curent working directory
 CWD = os.getcwd()
 
-
-def isThereAnID(path_to_code_to_check):
-    """Check that this test is being run on a VM."""
-    try:
-        place = os.path.join(path_to_code_to_check, '_checkID')
-        print("looking in {}".format(place))
-        print("LOCAL", LOCAL, "\nCWD", CWD)
-        f = open(place, 'r')
-        contents = f.read()
-        print("contents", contents)
-        return len(contents) > 8
-    except Exception:
-        print("TIP: Have you run pytest.py yet?")
-        return False
+testResults = []
 
 
-def isRequestsWorking(path_to_code_to_check):
-    """Check that the requests library is installed and working.
+def test_hello_world():
+    source = ''.join(inspect.getsourcelines(exercise1)[0]).lower()
+    if "print('hello world!')" in source or 'print("hello world!")' in source:
+        return True
+    return False
+    
+def test_dev_env():
+    if os.system("""python -c 'print("python installed")'""") == 0:
+        return True
+    return False
 
-    This makes a request from a web location so it also checks that the VM is
-    connected to the internet.
+def lab_book_entry_completed():
+    lab_book = Path("week1/readme.md")
+    if lab_book.is_file():
+        with open(lab_book, 'r') as f:
+            lines = f.readlines()
+            if lines == ['TODO: Reflect on you learned this week and what is still unclear to you.\n']:
+                return False
+            elif lines:
+                return True
+    return False
+                
 
-    """
-    try:
-        f = open(os.path.join(path_to_code_to_check, '_requestsWorking'), 'r')
-        contents = f.read()
-        if "noodly appendage" in "".join(contents):
-            return True
-        elif "Alas, all is lost" in "".join(contents):
-            print("looks like your internet connection isn't working")
-            return False
-        else:
-            print("Something strange is happening")
-            return False
-    except Exception:
-        print("TIP: Have you run pytest.py yet?")
-        return False
+if __name__ == '__main__':
+    testResults.append(test(test_dev_env(), "Python is installed and configured on this machine"))    
+    testResults.append(test(test_hello_world(), "Exercise1: Print 'Hello world!"))
+    testResults.append(test(lab_book_entry_completed(), "Lab book entry completed"))    
 
-
-def theTests(path_to_code_to_check="."):
-    """Run the tests.
-
-    This is the main function, it contains all the tests for the week.
-    """
-    print("\nWelcome to week {}!".format(WEEK_NUMBER))
-    print("Let's check that everything is set up.\n")
-
-    path = "{}/week{}/".format(path_to_code_to_check, WEEK_NUMBER)
-    testResults = []
-    testResults.append(
-        test(isThereAnID(path), "Exercise 1: Test that your VM is working"))
-    testResults.append(
-        test(isRequestsWorking(path),
-             "Exercise 1: Test your connection to the internet"))
-
-    return {
-        "of_total": len(testResults),
-        "mark": sum(testResults),
-        "results": testResults
-    }
-
-
-if __name__ == "__main__":
-    theTests()
