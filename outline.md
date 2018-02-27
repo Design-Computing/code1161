@@ -18,6 +18,10 @@ The third section will be the Open Data Project: a data analysis and story telli
 
 ### Course website: 
 [https://design-computing.github.io/code1161/](https://design-computing.github.io/code1161/)
+
+### Course repository
+[https://github.com/Design-Computing/code1161](https://github.com/Design-Computing/code1161)
+
 ### Piazza. 
 - Forum for your questions about the material and the course. 
 - Annoucements, updates and my errors will be posted here invitations after I have your emails.s
