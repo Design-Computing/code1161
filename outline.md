@@ -11,7 +11,7 @@ In the same way that being able to hold a pen doesn't make you a writer, being a
 The course will be taught through three sections.
 The first will be becoming proficient in the [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
 Second is will be a machine learning project which utilises your newfound problem solving and programming skills.
-Third will be a the Open Data Projects: a data analysis and story telling telling task.
+The third section will be the Open Data Project: a data analysis and story telling telling task.
 
 
 ## Course Communication
@@ -20,9 +20,10 @@ Third will be a the Open Data Projects: a data analysis and story telling tellin
 [https://design-computing.github.io/code1161/](https://design-computing.github.io/code1161/)
 ### Piazza. 
 - Forum for your questions about the material and the course. 
-- Annoucements, updates and my errors will be posted here invitations after I have your email
+- Annoucements, updates and my errors will be posted here invitations after I have your emails.s
 - Email
 	- Ishaan Varshney: ishaan.varshney@unsw.edu.au
+	- Aiden Ray: z3460907@ad.unsw.edu.au
 - Slack?
 
 ## Assessments
