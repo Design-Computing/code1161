@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import requests
 
-url = "https://api.github.com/repos/Design-Computing/code1161base/forks"
+url = "https://api.github.com/repos/Design-Computing/code1161/forks"
 r = requests.get(url + "?per_page=100")
 theJson = json.loads(r.text)
 

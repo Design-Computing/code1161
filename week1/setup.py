@@ -2,10 +2,11 @@ import os
 # install virtualenv
 
 # create virtualenv
-os.system('conda create -n codeenv python=3.6 anaconda')
-# activate the virtualenv
-os.system('source activate codeenv')
+# on macOS /anaconda3/bin/conda create -y  --name codeenv python=3.6
+os.system('conda create -y  --name codeenv python=3.6')
 # try and install requests
 os.system('pip install requests')
-os.system('code --install-extension ms-python.python')
 # install python ext
+os.system('code --install-extension ms-python.python')
+# install code runner
+os.system('code --install-extension formulahendry.code-runner')
