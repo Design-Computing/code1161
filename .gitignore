@@ -19,3 +19,4 @@ temp_completion_log
 maps/nswlocalitypolygonshp\.zip
 
 venv/
+.vscode/
