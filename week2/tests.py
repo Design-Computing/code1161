@@ -6,8 +6,8 @@ of the exercise files does what it's supposed to.
 """
 
 # TODO replace flake8 with yapf or calm flake8 down
-from __future__ import division
-from __future__ import print_function
+
+
 import imp
 import os
 import sys

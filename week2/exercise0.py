@@ -1,7 +1,5 @@
 # -*- coding: UTF-8 -*-
 """Modify each function until the tests pass."""
-from __future__ import division
-from __future__ import print_function
 
 
 def add_5(a_number):

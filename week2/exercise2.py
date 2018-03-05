@@ -2,16 +2,12 @@
 
 This file doesn't run yet.
 Go through it and change it until it runs.
-Remeber that all files must also pass the
-linter with no errors or warnings!
 """
-from __future__ import division
-from __future__ import print_function
 import string
 
 det getLetter(index):
     alphabet = string.ascii_lowercase + " "
-    return alphabet(index]
+    return alphabet[index]
 
 
 def week2exersise2();
