@@ -17,20 +17,14 @@ from codeHelpers import nyan_cat
 from codeHelpers import test
 from codeHelpers import ex_runs
 
-from week2 import exercise2
+
 WEEK_NUMBER = 2
 
 
 def ex2runs(path):
     """Test w2 ex2 to check it works."""
     try:
-        # if path:
-        #     imp.load_source("exercise2",
-        #                     os.path.join(path, "week"+str(WEEK_NUMBER)))
-        #     return True
-        # else:
-        #     import exercise2
-        #     return True
+        from week2 import exercise2
         return exercise2.week2exersise2() == "MC Hammer"
     except Exception as e:
         print("\nThere is a syntax error", str(e))
@@ -47,7 +41,7 @@ def syntax_error_message(e):
 def ex3runs(path):
     """Test w2 ex3 to check it works."""
     try:    
-        import exercise3
+        from week2 import exercise3
         return True
     except Exception as e:
         print("\nThere is a syntax error in exercise3", str(e))
