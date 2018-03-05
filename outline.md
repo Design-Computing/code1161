@@ -22,13 +22,16 @@ The third section will be the Open Data Project: a data analysis and story telli
 ### Course repository
 [https://github.com/Design-Computing/code1161](https://github.com/Design-Computing/code1161)
 
-### Piazza. 
-- Forum for your questions about the material and the course. 
-- Annoucements, updates and my errors will be posted here invitations after I have your emails.s
-- Email
-	- Ishaan Varshney: ishaan.varshney@unsw.edu.au
-	- Aiden Ray: z3460907@ad.unsw.edu.au
-- Slack?
+### Piazza
+- Forum for your questions about the material and the course.
+- Annoucements, updates and my errors will be posted here invitations after I have your emails
+
+### Email
+- Ishaan Varshney: ishaan.varshney@unsw.edu.au
+- Aiden Ray: z3460907@ad.unsw.edu.au
+
+### Slack
+- General chit-chat about comp design and computing.
 
 ## Assessments
 ### [View in full](./admin/diagrams.html)
@@ -58,18 +61,6 @@ The third section will be the Open Data Project: a data analysis and story telli
 Instructions:
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQED50HjjGZhZ8Nv_9m8dSij1-eVpzuT3jBh3Djd6axm6guCc0H9gWpk9OJwfSIfbIiwGOSPDDz75qG/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-- Software Checklist:
-
-	- Download and Install
-		- python3 from [https://www.anaconda.com/download/](https://www.anaconda.com/download/)
-		- visual studio code [https://www.anaconda.com/download/](https://code.visualstudio.com/download)
-		- github desktop [https://help.github.com/desktop/guides/getting-started-with-github-desktop/installing-github-desktop/](https://help.github.com/desktop/guides/getting-started-with-github-desktop/installing-github-desktop/)
-	
-	- Account Creation:
-		- github: [https://github.com/](https://github.com/)
-		- piazza: by invitiation this week
-		- slack: by invitation this week 
-
 		
 Attempt exercises in trinket.io if you have finished.
 
@@ -89,4 +80,33 @@ In the last hour we will familiarise ourselves with each bit of software we have
 <p class="reference"><strong>Doherty, B.</strong> (2015). <a href="https://notionparallax.co.uk/2015/architects-getting-automated"><em>Architects getting automated?</em></a></p>
 <p class="reference"><strong>Noll, A. M.</strong> (1967). <a href="http://noll.uscannenberg.org/Art%20Papers/Creative%20Medium.pdf">The digital computer as a creative medium</a>. IEEE Spectrum, 4(10), 89–95.</p>
 </dd>
+
+
+### Week 2: All of Python in three hours
+
+#### Introduction
+
+- This week we will obtain an overview of all the components of the Python syntax. Theoretically, you will be able to do __any__ programming task after this week ;-).
+
+- More details about the development environment.
+
+- How to ask questions and the three step process to general problem solving.
+
+#### Requirements
+
+- A computer to all lect
+
+#### Lecture
+
+
+#### Lab
+
+#### Homework
+- The first two readings
+- homework exercises in week2 folder
+- 
+
+#### Readings
+https://automatetheboringstuff.com/#toc chapters 1-5
+https://programminghistorian.org/lessons/getting-started-with-github-desktop
 
