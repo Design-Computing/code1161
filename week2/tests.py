@@ -5,6 +5,7 @@ This file tests your code. It'll check that the work in each
 of the exercise files does what it's supposed to.
 """
 
+# TODO replace flake8 with yapf or calm flake8 down
 from __future__ import division
 from __future__ import print_function
 import imp
@@ -14,22 +15,22 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from codeHelpers import completion_message
 from codeHelpers import nyan_cat
 from codeHelpers import test
-from codeHelpers import test_flake8
 from codeHelpers import ex_runs
 
+from week2 import exercise2
 WEEK_NUMBER = 2
 
 
 def ex2runs(path):
     """Test w2 ex2 to check it works."""
     try:
-        if path:
-            imp.load_source("exercise2",
-                            os.path.join(path, "week"+str(WEEK_NUMBER)))
-            return True
-        else:
-            import exercise2
-            return True
+        # if path:
+        #     imp.load_source("exercise2",
+        #                     os.path.join(path, "week"+str(WEEK_NUMBER)))
+        #     return True
+        # else:
+        #     import exercise2
+        #     return True
         return exercise2.week2exersise2() == "MC Hammer"
     except Exception as e:
         print("\nThere is a syntax error", str(e))
@@ -45,15 +46,9 @@ def syntax_error_message(e):
 
 def ex3runs(path):
     """Test w2 ex3 to check it works."""
-    try:
-        # this annoys the linter, but I think the scoping is ok
-        if path:
-            imp.load_source("exercise3",
-                            os.path.join(path, "week"+str(WEEK_NUMBER)))
-            return True
-        else:
-            import exercise3
-            return True
+    try:    
+        import exercise3
+        return True
     except Exception as e:
         print("\nThere is a syntax error in exercise3", str(e))
         print('\n{s:{c}^{n}}\n{s:{c}^{n}}'.format(n=50, c='*', s=""))
@@ -72,9 +67,7 @@ def theTests(path_to_code_to_check="."):
 
     # Tests from here:
     path = "{}/week{}/exercise0.py".format(path_to_code_to_check, WEEK_NUMBER)
-    testResults.append(
-        test(test_flake8(path),
-             "Exercise 0: pass the linter"))
+
 
     if ex_runs(path_to_code_to_check, exNumber=0, weekNumber=WEEK_NUMBER):
         exercise0 = imp.load_source("exercise0", path)
@@ -127,25 +120,22 @@ def theTests(path_to_code_to_check="."):
         testResults.append(
             test(exercise0.really_shout("PARTY") == "PARTY!",
                  "Exercise 0: really_shout - PARTY => PARTY!?"))
+        testResults.append(
+            test(exercise0.shout_with_a_number("hi", 1) == "HI 1",
+                 "Exercise 0: shout_with_a_number - hi, 1 => HI 1?"))
 
     path = "{}/week{}/exercise1.py".format(path_to_code_to_check, WEEK_NUMBER)
-    testResults.append(
-        test(test_flake8(path),
-             "Exercise 1: pass the linter"))
+
 
     path = "{}/week{}/exercise2.py".format(path_to_code_to_check, WEEK_NUMBER)
-    testResults.append(
-        test(test_flake8(path),
-             "Exercise 2: pass the linter"))
+
 
     testResults.append(
         test(ex2runs(path_to_code_to_check),
              "Exercise 2: debug the file"))
 
     path = "{}/week{}/exercise3.py".format(path_to_code_to_check, WEEK_NUMBER)
-    testResults.append(
-        test(test_flake8(path),
-             "Exercise 3: pass the linter"))
+
 
     if ex3runs(path_to_code_to_check):
         exercise3 = imp.load_source("exercise3", path)
@@ -181,11 +171,6 @@ def theTests(path_to_code_to_check="."):
             test(exercise3.loops_1a() == tenStars,
                  "Exercise 3: loops_1a - 1d for loop"))
 
-        bang_star = ["!", "*", "!", "*", "!", "*", "!", "*", "!", "*"]
-        testResults.append(
-            test('map' in exercise3.star_map.func_code.co_names and
-                 exercise3.star_map() == bang_star,
-                 "Exercise 3: loops_1b - 1d map"))
 
         testResults.append(
             test(exercise3.loops_1c(3, ":)") == [':)', ':)', ':)'],
