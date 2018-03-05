@@ -46,6 +46,16 @@ def really_shout(a_string):
     """
     pass
 
+def shout_with_a_number(a_string, a_number):
+    """Return a string in uppercase with a space and a_number concatentated.
+    E.g.
+    >>> shout_with_a_number('hello', 42)
+    'HELLO 42'
+
+    HINT: Lookup how to cast a_number to a string or lookup how to use f-strings in python
+    """
+    pass
+
 
 def minitest(f, args, expected):
     """Run a function with a list of args and print a response.
@@ -73,6 +83,7 @@ if __name__ == "__main__":
     minitest(really_shout, ["hello"], "HELLO!")
     minitest(really_shout, [""], "!")
     minitest(really_shout, ["!"], "!!")
+    minitest(shout_with_a_number, ('hello', 42), "HELLO 42")
     print("""
           This section does a quick test on your results and prints them nicely
           It's NOT the official tests, they are in tests.py as usual.
