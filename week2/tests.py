@@ -11,11 +11,11 @@ of the exercise files does what it's supposed to.
 import imp
 import os
 import sys
+from pathlib import Path
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from codeHelpers import completion_message
-from codeHelpers import nyan_cat
-from codeHelpers import test
-from codeHelpers import ex_runs
+
+
+from codeHelpers import completion_message, ex_runs, nyan_cat, test
 
 
 WEEK_NUMBER = 2
@@ -50,6 +50,17 @@ def ex3runs(path):
         print("until you fix the syntax errors in exercise3.py")
         print('{s:{c}^{n}}\n{s:{c}^{n}}\n'.format(n=50, c='*', s=""))
         return False
+
+def lab_book_entry_completed():
+    lab_book = Path("week2/readme.md")
+    if lab_book.is_file():
+        with open(lab_book, 'r') as f:
+            lines = f.readlines()
+            if lines == ['TODO: Reflect on what you learned this week and what is still unclear.\n']:
+                return False
+            elif lines:
+                return True
+    return False
 
 
 def theTests(path_to_code_to_check="."):
@@ -260,7 +271,7 @@ def theTests(path_to_code_to_check="."):
         testResults.append(
             test(exercise3.loops_7() == pyramid,
                  "Exercise 3: loops_7 - pyramid of stars"))
-
+    testResults.append(test(lab_book_entry_completed(), "Lab book entry completed"))
     print("{0}/{1} (passed/attempted)".format(sum(testResults),
                                               len(testResults)))
 

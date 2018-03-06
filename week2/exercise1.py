@@ -1,14 +1,11 @@
 """
-Commenting skills
+Commenting skills:
 
-TODO: above every line of code comment what you THINK the line below does
-TODO: execute that line and write what it actually did next to it
+TODO: above every line of code comment what you THINK the line below does.
+TODO: execute that line and write what actually happened next to it.
 
 See example for first print statement
 """
-
-
-
 import platform
 
 # I think this will print "hello! Let's get started" by calling the print function.
