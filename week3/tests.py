@@ -4,8 +4,8 @@
 This file tests your code. It'll check that the work in each
 of the exercise files does what it's supposed to.
 """
-from __future__ import division
-from __future__ import print_function
+
+
 import imp
 import math
 import mock
@@ -32,7 +32,7 @@ def test_stubborn_asker(path, low, high):
     except Exception as e:
         return syntax_error_message(4, e)
 
-    mockInputs = range(low - 25, high + 20, 5)
+    mockInputs = list(range(low - 25, high + 20, 5))
     try:
         with Timeout(3):
             with mock.patch('__builtin__.raw_input', side_effect=mockInputs):
@@ -67,7 +67,7 @@ def test_super_asker(path, low, high):
         return syntax_error_message(1, e)
 
     dirty_things = ["aword", [1, 2, 3], {"an": "object"}]
-    neat_range = range(low - 25, high + 20, 5)
+    neat_range = list(range(low - 25, high + 20, 5))
     mockInputs = dirty_things + neat_range
     try:
         with Timeout(3):
@@ -88,7 +88,7 @@ def test_example_guessingGame(path):
     except Exception as e:
         return syntax_error_message(2, e)
     upperBound = 5
-    guesses = range(5+1)
+    guesses = list(range(5+1))
     mockInputs = [upperBound] + guesses
     try:
         with Timeout(3):
@@ -260,7 +260,7 @@ def theTests(path_to_code_to_check="."):
 
         lowerBound = 10
         upperBound = 15
-        guesses = range(lowerBound, upperBound + 1)
+        guesses = list(range(lowerBound, upperBound + 1))
         mockInputs = [lowerBound] + [upperBound] + guesses
         testResults.append(
             test(test_advanced_guessingGame(path_to_code_to_check,
@@ -277,7 +277,7 @@ def theTests(path_to_code_to_check="."):
         lowerBound = 15
         upperBound = 10
         secondGuess = 25
-        guesses = range(lowerBound, secondGuess + 1)
+        guesses = list(range(lowerBound, secondGuess + 1))
         mockInputs = [lowerBound] + [upperBound] + [secondGuess] + guesses
         testResults.append(
             test(test_advanced_guessingGame(path_to_code_to_check,
@@ -288,7 +288,7 @@ def theTests(path_to_code_to_check="."):
         lowerBound = 10
         upperBound = 11
         secondGuess = 15
-        guesses = range(lowerBound, secondGuess + 1)
+        guesses = list(range(lowerBound, secondGuess + 1))
         mockInputs = [lowerBound] + [upperBound] + [secondGuess] + guesses
         testResults.append(
             test(test_advanced_guessingGame(path_to_code_to_check,
@@ -299,7 +299,7 @@ def theTests(path_to_code_to_check="."):
         lowerBound = 10
         upperBound = 10
         secondGuess = 15
-        guesses = range(lowerBound, secondGuess + 1)
+        guesses = list(range(lowerBound, secondGuess + 1))
         mockInputs = [lowerBound] + [upperBound] + [secondGuess] + guesses
         testResults.append(
             test(test_advanced_guessingGame(path_to_code_to_check,

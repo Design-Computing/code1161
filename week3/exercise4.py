@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 """Week 3, Exercise 4."""
-from __future__ import division
-from __future__ import print_function
+
+
 import math
 # import time
 
