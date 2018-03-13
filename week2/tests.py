@@ -71,7 +71,7 @@ def theTests(path_to_code_to_check="."):
     testResults = []
 
     # Tests from here:
-    path = "{}/week{}/exercise0.py".format(path_to_code_to_check, WEEK_NUMBER)
+    path = "exercise0.py"
 
 
     if ex_runs(path_to_code_to_check, exNumber=0, weekNumber=WEEK_NUMBER):
@@ -129,17 +129,17 @@ def theTests(path_to_code_to_check="."):
             test(exercise0.shout_with_a_number("hi", 1) == "HI 1",
                  "Exercise 0: shout_with_a_number - hi, 1 => HI 1?"))
 
-    path = "{}/week{}/exercise1.py".format(path_to_code_to_check, WEEK_NUMBER)
+    path = "exercise1.py".format(path_to_code_to_check, WEEK_NUMBER)
 
 
-    path = "{}/week{}/exercise2.py".format(path_to_code_to_check, WEEK_NUMBER)
+    path = "exercise2.py".format(path_to_code_to_check, WEEK_NUMBER)
 
 
     testResults.append(
         test(ex2runs(path_to_code_to_check),
              "Exercise 2: debug the file"))
 
-    path = "{}/week{}/exercise3.py".format(path_to_code_to_check, WEEK_NUMBER)
+    path = "exercise3.py".format(path_to_code_to_check, WEEK_NUMBER)
 
 
     if ex3runs(path_to_code_to_check):
