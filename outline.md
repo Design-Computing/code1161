@@ -1,5 +1,7 @@
 # CODE1161 Design Computing Homepage S1 2018
 
+Us: [https://design-computing.github.io/code1161/guess_who_poster.html](https://design-computing.github.io/code1161/guess_who_poster.html)
+
 ## Course Outline:
 
 This course focuses on using programming as a means of  problem solving, storytelling and creative expression for people in non-computer science fields.
@@ -107,9 +109,32 @@ In the last hour we will familiarise ourselves with each bit of software we have
 #### Homework
 - The first two readings
 - homework exercises in week2 folder
-- 
 
 #### Readings
 https://automatetheboringstuff.com/#toc: chapters 1-5 Really awesome book
 https://programminghistorian.org/lessons/getting-started-with-github-desktop: Clarification for the github stuff
+
+
+### Week 3: Useful Programs and Algorithms
+
+#### Introduction
+
+This week in the lecture we will cover loops, collections and functions and taking user input by building a hangman game.
+
+#### Lecture
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQQvpQvKiZyXyKCck-vJxxY2N7ONCfv08Yy5AtpxSu_8zG47yVlDwAfkk1LbAWvanX2NKJV1e7KEGWt/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+#### Lab
+Instructions for week3:
+
+- *pull from upstream/master*
+- run *week3/setup.py* to install required libraries
+- start working through the lab exercises
+
+#### Homework
+- Khan Academy Algorithms Course: [https://www.khanacademy.org/computing/computer-science/algorithms](https://www.khanacademy.org/computing/computer-science/algorithms). 'Intro to Algorithms' and 'Binary Search' sections
+- Lab book for week3x
+- homework exercises in week3 folder
+
 
