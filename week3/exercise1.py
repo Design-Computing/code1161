@@ -75,8 +75,7 @@ if __name__ == "__main__":
     # Add to these tests, give them arguments etc. to make sure that your
     # code is robust to the situations that you'll see in action.
     # NOTE: because some of these take user input you can't run them from
-    # inside Atom, you need to run them from the terminal. E.g.:
-    # ben@um:~/projects/git/code1161base$ python week3/exercise1.py
+    
 
     print("\nloop_ranger", loop_ranger(1, 10, 2))
     print("\nlone_ranger", lone_ranger(1, 10, 3))
@@ -85,6 +84,6 @@ if __name__ == "__main__":
     print("\nstubborn_asker")
     stubborn_asker(30, 45)
     print("\nnot_number_rejector")
-    not_number_rejector()
+    not_number_rejector("Enter a number: ")
     print("\nsuper_asker")
     super_asker(33, 42)
