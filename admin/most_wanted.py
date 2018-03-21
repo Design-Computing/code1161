@@ -47,7 +47,6 @@ def wrap_into_body(content):
 def card_template(details):
     details["raw"] = "https://raw.githubusercontent.com"
     details["gh"] = "https://github.com"
-    details["medium"] = "https://medium.com"
     return """
     <div class="person">
     <img src="{raw}/{gitHubUsername}/{repo_name}/master/mugshot.png">
@@ -61,21 +60,10 @@ def card_template(details):
       <dd>
         <a href="{gh}/{gitHubUsername}/{repo_name}">{gitHubUsername}</a>
       </dd>
-    <dt>Stackoverflow:</dt>
-      <dd>
-        <a href="{stackoverflow}">{stackoverflow}</a>
-      </dd>
-    <dt>Medium:</dt>
-      <dd>
-        <a href="{medium}/{mediumUsername}">{mediumUsername}</a>
-      </dd>
     <dt>UNSW Email:</dt>
       <dd>{unswEmail}</dd>
     <dt>realEmail:</dt>
       <dd>{realEmailFirstBit}{realEmailOtherBit}</dd>
-    <dt>slack:</dt>
-      <dd>{slack}</dd>
-    </dl>
     </div>""".format(**details).replace("^AT^", "@")
 
 
