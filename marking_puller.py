@@ -7,18 +7,21 @@ It can clone new repos if you set THERE_ARE_NEW_STUDENTS to true
 
 
 
-from io import StringIO
-from .codeHelpers import RunCmd
-from datetime import datetime
-from itertools import repeat
-import git
 import json
 import os
-import pandas as pd
 import re
+import sys
+import time
+from datetime import datetime
+from io import StringIO
+from itertools import repeat
+
+import git
+import pandas as pd
 import requests
 import ruamel.yaml as yaml
-import time
+
+from codeHelpers import RunCmd
 
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
 CWD = os.getcwd()  # The curent working directory
@@ -29,7 +32,7 @@ print("CWD", CWD)
 def getDFfromCSVURL(url, columnNames=False):
     """Get a csv of values from google docs."""
     r = requests.get(url)
-    data = r.content
+    data = r.text
     if columnNames:
         return pd.read_csv(StringIO(data), header=0, names=columnNames)
     else:
@@ -39,32 +42,35 @@ def getDFfromCSVURL(url, columnNames=False):
 def update_for_new_students(chatty=False):
     """Get an updated copy of the spreadsheet."""
     # pull the forks list
-    ss_of_details_url = ("https://docs.google.com/spreadsheets/d/"
-                         "1qeOp6PZ48BFLlHaH3ZEil09MBNfQD0gztuCm2cEiyOo/"
-                         "pub?gid=2144767463"
-                         "&single=true&output=csv")
+    # ss_of_details_url = ("https://docs.google.com/spreadsheets/d/"
+    #                      "1qeOp6PZ48BFLlHaH3ZEil09MBNfQD0gztuCm2cEiyOo/"
+    #                      "pub?gid=2144767463"
+    #                      "&single=true&output=csv")
 
-    student_details = getDFfromCSVURL(ss_of_details_url, ["paste",
-                                                          "their_username",
-                                                          "repo_name",
-                                                          "check",
-                                                          "repo_url",
-                                                          "slack"])
+    # student_details = getDFfromCSVURL(ss_of_details_url, ["paste",
+    #                                                       "their_username",
+    #                                                       "repo_name",
+    #                                                       "check",
+    #                                                       "repo_url",
+    #                                                       "slack"])
 
-    for index, student in student_details.iterrows():
+    ss_of_details_url = open('csv/github.csv').readlines()[1:]
+    username_urls = [x.split(",")[:-1] for x in ss_of_details_url]
+    
+    for index, students in enumerate(username_urls):
+        username, url = students
+        # TODO note down timings of the commits
         try:
-            git.Repo.clone_from(student.repo_url,
-                                os.path.join(rootdir, student.their_username))
+            git.Repo.clone_from(url,  # supply the github url here
+                                os.path.join(rootdir, username))
             print("{} new repo for {}".format(index,
-                                              student.their_username))
+                                              username))
         except Exception as e:
             if chatty:
                 print("{} we already have {} {}".format(index,
-                                                        student.their_username,
+                                                        username,
                                                         e))
-
-    return student_details
-
+                return username_urls  # is this right?
 
 def try_to_kill(file_path, chatty=False):
     """Attempt to delete the file specified by file_path."""
@@ -110,8 +116,8 @@ def csvOfDetails(dirList):
             details = yaml.load(details, yaml.RoundTripLoader)
             details["repoName"] = student_repo
             details["error"] = False
-            if details["mediumUsername"][:4] != "^AT^":
-                details["mediumUsername"] = "^AT^" + details["mediumUsername"]
+            # if details["mediumUsername"][:4] != "^AT^":
+            #     details["mediumUsername"] = "^AT^" + details["mediumUsername"]
             results.append(details)
 
             if details["studentNumber"] == "z1234567":
@@ -173,7 +179,7 @@ def test_in_clean_environment(student_repo,
     log_progress(student_repo, logfile_name)
     start_time = time.time()
     try:
-        test_args = ['python',
+        test_args = [sys.executable,
                      test_file_path,
                      "week{}.tests".format(week_number),
                      "{}/{}".format(root_dir, student_repo)
@@ -187,7 +193,7 @@ def test_in_clean_environment(student_repo,
         #       "\ntest_file_path", test_file_path,
         #       "\ntimeout", timeout,
         #       "\nLOCAL", LOCAL)
-        RunCmd(test_args, timeout).Run()
+        RunCmd(test_args, timeout).Run()  # this is unessarily complicated
 
         full_path = os.path.join(LOCAL,  temp_file_path)
         temp_results = open(full_path, 'r')
@@ -242,18 +248,28 @@ def mark_work(dirList, week_number, root_dir, dfPlease=True, timeout=5):
     if dfPlease:
         return resultsDF
 
-
 rootdir = '../code1161StudentRepos'
+print(os.listdir(rootdir))
+user_input = input("Select which repo to mark (leave empty if fresh pull): ")
 
+if not user_input:
+    rootdir = '../code1161StudentRepos/' + datetime.now().strftime('%Y%m%d_%H%M')
+else:
+    rootdir = '../code1161StudentRepos/' + user_input
+    if not os.path.exists(rootdir):
+        print("user specificed folder does not exist")
+        os._exit()
+if not os.path.exists(rootdir):
+    os.makedirs(rootdir)
 print("\nCheck to see if there are any new students in the spreadsheet")
 update_for_new_students(chatty=True)
 
-dirList = os.listdir(rootdir)
+dirList = os.listdir(rootdir) # do we know if everyone's work got in?
 print("dir list", dirList)
 
 print("\nPull all the repos so we have the latest copy.")
 print("(This takes a while.)")
-pull_all_repos(dirList, chatty=True)
+# pull_all_repos(dirList, chatty=True)
 
 print("\nUpdate the CSV of details")
 csvOfDetails(dirList)  # This feeds the sanity check spreadsheet
