@@ -1,6 +1,13 @@
+'''
+    Hangman Game, now it a persistent leaderboard
+'''
+# standard lib module imports
+import json
+import os
 import random
 import time
-import json
+
+# the hangman images list
 HANGMANPICS = [
     '''
 +---+
@@ -60,6 +67,8 @@ O   |
     |
 ========='''
 ]
+
+# creating list of potential choices by splitting on a space.
 words = 'ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow deer dog donkey duck eagle ferret fox frog goat goose hawk lion lizard llama mole monkey moose mouse mule newt otter owl panda parrot pigeon python rabbit ram rat raven rhino salmon seal shark sheep skunk sloth snake spider stork swan tiger toad trout turkey turtle weasel whale wolf wombat zebra'.split(' ')
 
 
@@ -107,17 +116,17 @@ def playAgain():
     return input().lower().startswith('y')
 
 
-def display_highscores(cont=False):
+def display_highscores():
     global game_stats    
-    if not cont:
+    if os.path.exists('./high_scores.txt'):
         game_stats = json.load(open('high_scores.txt'))
     print('---- HIGH SCORES ----')
     for stat in game_stats:
-        for key, value in stat.items():
-            print('---- **** ----')
+        print('---- **** ----')
+        for key, value in stat.items():    
             print('{}  {}'.format(key, value))
-            print('---- **** ----')
-    print('---- ---- ----\n\n')
+        print('---- **** ----')
+    print('---- ---------- ----\n\n')
 
 print('H A N G M A N')
 missedLetters = ''
@@ -126,9 +135,9 @@ secretWord = getRandomWord(words)
 gameIsDone = False
 
 game_stats = []
+display_highscores()
 name = input("Who is playing: ")
 start_time = time.time()
-display_highscores()
 while True:
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
     # Let the player type in a letter.
@@ -161,7 +170,7 @@ while True:
     percentage_correct = len(correctLetters)/len(secretWord)     
     # Ask the player if they want to play again (but only if the game is done).
     if gameIsDone:
-        stat = {}
+        stat = {}  # create a dictionary to contain the game stats
         stat['name'] = name
         stat['time_taken'] = elapsed_time
         stat['percentage'] = percentage_correct
@@ -171,8 +180,13 @@ while True:
             correctLetters = ''
             gameIsDone = False
             secretWord = getRandomWord(words)
-            display_highscores(cont=True)
-        else:
+            # save game_stats in high_scores.txt
             with open('high_scores.txt', 'w') as outfile:
                 json.dump(game_stats, outfile)
-
+            display_highscores()
+        else:
+            # save game_stats in high_scores.txt
+            with open('high_scores.txt', 'w') as outfile:
+                json.dump(game_stats, outfile)
+            display_highscores()
+            break
