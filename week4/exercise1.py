@@ -15,21 +15,6 @@ if LOCAL != CWD:
     print("CWD", CWD)
 
 
-def success_is_relative():
-    """Read from a file.
-
-    Read the success message from week 1, but from here, using a relative path.
-    TIP: remember that it's relative to your excecution context, not this file.
-         The tests are run from the code1161base directory, that's the
-         excecution context for this test.
-    TIP: check that there ins't unwanted whitespace or line endings in the
-         response. Look into .strip() and see what it does.
-    """
-    # this depends on excecution context. Take a look at your CWD and remember
-    # that it changes.
-    # print(path, CWD)
-    pass
-
 
 def get_some_details():
     """Parse some JSON.
@@ -48,19 +33,23 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
-    data = json.loads(json_data)
-    return {"lastName":       None,
-            "password":       None,
-            "postcodePlusID": None
+    data = json.loads(json_data)["results"][0]
+    pstcodeIDSum = int(data["location"]["postcode"]) + int(data["id"]["value"])
+    return {"lastName":       data["name"]["last"],
+            "password":       data["login"]["password"],
+            "postcodePlusID": pstcodeIDSum
             }
+
 
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
 
-    There is a random word generator here: http://www.setgetgo.com/randomword/
-    The only argument that the generator takes is the length of the word.
+    There is a random word generator here:
+    http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1
+    The arguments that the generator takes is the minLength and maxLength of the word
+    as well as the limit, which is the the number of words. 
+    Visit the above link as an example.
     Use this and the requests library to make a word pyramid. The shortest
     words they have are 3 letters long and the longest are 20. The pyramid
     should step up by 2 letters at a time.
@@ -86,7 +75,7 @@ def wordy_pyramid():
     "Nereis",
     "Leto",
     ]
-    TIP: to add an argument to a URL, use: ?argName=argVal e.g. ?len=
+    TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
     pass
 
@@ -123,7 +112,7 @@ def diarist():
 
     Read in Trispokedovetiles(laser).gcode and count the number of times the
     laser is turned on and off. That's the command "M10 P1".
-    Write the answer (a number) to a file called 'lasers.pew'
+    Write the answer (a number) to a file called 'lasers.pew' in the week4 directory.
     TIP: you need to write a string, so you'll need to cast your number
     TIP: Trispokedovetiles(laser).gcode uses windows style line endings. CRLF
          not just LF like unix does now. If your comparison is failing this
@@ -131,11 +120,28 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    pass
+    gcode = str(open("./Trispokedovetiles(laser).gcode", 'r').read())
+    charCount = 0
+    onOffCounter = 0
+    while charCount < len(gcode):
+        if gcode[charCount:charCount+6] == "M10 P1":
+            onOffCounter += 1
+        charCount += 1
+        # print(str(charCount), str(onOffCounter))
+        # print(str(gcode[charCount:charCount+6]))
+    try:
+        os.remove("lasers.pew")
+        print('File removed!')
+    except Exception:
+        print("Hmmm didn't work... Maybe the file didn't already exist?")
+    lasersFile = open("lasers.pew", 'w+')
+    lasersFile.write(str(onOffCounter))
 
 
 if __name__ == "__main__":
     print([len(w) for w in wordy_pyramid()])
     print(get_some_details())
     print(wunderground())
-    print(diarist())
+    diarist()
+    if not os.path.isfile("lasers.pew"):
+        print('diarist did not create lasers.pew')
