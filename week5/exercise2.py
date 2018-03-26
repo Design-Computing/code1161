@@ -33,13 +33,13 @@ def italian_dinner(axiom="tomatoes", guard=6):
             part of the formal system into any other using replacement rules.
     In the itallian dinner, teh axiom is of course _tomatoes_
 
-    Note that in order for this to work, we need to habe at least one word in
+    Note that in order for this to work, we need to have at least one word in
     the right-hand side that matches one of the words in the left-hand side.
     If we do not do this then the production system will not catch, and it will
     fail to expand into the florid ingredients list.
 
     From Paul Coates, Programming.Architecture
-    I would strongly recomend reading this book!
+    I would strongly recommend reading this book!
 
     referencing: DOUGLAS R. HOFSTADTER, Metamagical Themas
     https://archive.org/stream/MetamagicalThemas/Metamagical%20Themas,%20Hofstadter_djvu.txt
@@ -91,10 +91,12 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
-    def apply_rules(letter):
+    def apply_rules(letter, guard):
         """Control the substitution.
 
         You need to change these substitutions to make it work.
+
+        Hint: when guard == -1 return the letter.
         """
         if letter == "a":
             return "a"
@@ -129,7 +131,7 @@ def draw_koch(drawing_method, steps_deep=4):
     """Open a tk window and show the turtle drawing the koch curve.
 
     Docs for python turtles here.
-    https://docs.python.org/2/library/turtle.html
+    https://docs.python.org/3/library/turtle.html
     """
     raphael = turtle.Turtle()
     raphael.speed(1000)

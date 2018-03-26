@@ -28,6 +28,9 @@ PASS = 1
 FAIL = 0
 LOCAL = os.path.dirname(os.path.realpath(__file__))
 
+if 'week' in os.getcwd():
+    os.chdir('..')
+
 
 def test_diagrams(diagram, expected):
     """Test, crudely, that the correct diagram is being returned."""
@@ -80,16 +83,16 @@ def theTests(path_to_code_to_check="."):
     e1 = imp.load_source("exercise1", path)
 
     # Linter test
-    print("Linter test:", path)
-    testResults.append(
-        test(test_flake8(path),
-             "Exercise 1: pass the linter"))
+    # print("Linter test:", path)
+    # testResults.append(
+    #     test(test_flake8(path),
+    #          "Exercise 1: pass the linter"))
 
     # pydocstyle test
-    print("Docstyle test:", path)
-    testResults.append(
-        test(test_pydocstyle(path),
-             "Exercise 1: pass the pydocstyle test"))
+    # print("Docstyle test:", path)
+    # testResults.append(
+    #     test(test_pydocstyle(path),
+    #          "Exercise 1: pass the pydocstyle test"))
 
     # countdown test
     book_of_counts = [{"message": "let's get ready to rumble",
@@ -287,16 +290,16 @@ def theTests(path_to_code_to_check="."):
     e2 = imp.load_source("exercise2", path)
 
     # Linter test
-    print("Linter test:", path)
-    testResults.append(
-        test(test_flake8(path),
-             "Exercise 2: pass the linter"))
+    # print("Linter test:", path)
+    # testResults.append(
+    #     test(test_flake8(path),
+    #          "Exercise 2: pass the linter"))
 
     # pydocstyle test
-    print("Docstyle test:", path)
-    testResults.append(
-        test(test_pydocstyle(path),
-             "Exercise 2: pass the pydocstyle test"))
+    # print("Docstyle test:", path)
+    # testResults.append(
+    #     test(test_pydocstyle(path),
+    #          "Exercise 2: pass the pydocstyle test"))
 
     source = ["baaab",
               "b",

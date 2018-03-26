@@ -1,8 +1,7 @@
 # -*- coding: UTF-8 -*-
 """Refactoring.
 
-This excercise is very similar to week 2, exercise 2. It contains a complete
-and working example, but it's very poorly written.
+This exercise contains a complete and working example, but it's very poorly written.
 
 Your job is to go through it and make it as good as you can.
 
