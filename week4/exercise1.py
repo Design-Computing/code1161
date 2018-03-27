@@ -4,6 +4,8 @@
 import json
 import os
 import requests
+import inspect
+import sys
 
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
@@ -33,11 +35,11 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-    data = json.loads(json_data)["results"][0]
-    pstcodeIDSum = int(data["location"]["postcode"]) + int(data["id"]["value"])
-    return {"lastName":       data["name"]["last"],
-            "password":       data["login"]["password"],
-            "postcodePlusID": pstcodeIDSum
+
+    data = json.loads(json_data)
+    return {"lastName":       None,
+            "password":       None,
+            "postcodePlusID": None
             }
 
 
@@ -139,9 +141,11 @@ def diarist():
 
 
 if __name__ == "__main__":
-    print([len(w) for w in wordy_pyramid()])
-    print(get_some_details())
-    print(wunderground())
-    diarist()
+    functions = [obj for name,obj in inspect.getmembers(sys.modules[__name__]) if (inspect.isfunction(obj))]
+    for function in functions:
+        try:
+            print(function())
+        except Exception as e:
+            print(e)
     if not os.path.isfile("lasers.pew"):
         print('diarist did not create lasers.pew')
