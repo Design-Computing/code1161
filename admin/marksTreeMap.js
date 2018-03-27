@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
   function week(weekNumber, dayName, hour){
     hour = hour || 9;
-    var startMonday = new Date(2017, 1, 26);
+    var startMonday = new Date(2018, 1, 26);
     var weekOffset = (weekNumber - 1) * 7;
     var dayNames = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
     var dayIndex = dayNames.indexOf(dayName.toLowerCase());
