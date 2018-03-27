@@ -46,7 +46,7 @@ def do_bunch_of_bad_things():
     print(yet_another_hyp)
 
 
-# return a lit of countdown messages, much like in the bad function above.
+# return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
     pass
