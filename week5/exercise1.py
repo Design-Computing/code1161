@@ -10,21 +10,10 @@ it isn't. Take repeated code and make it into a function. Also use functions
 to encapsulate concepts. If something is done many times, maybe a map or a loop
 is called for. Etc.
 
-The resulting file should feel as close to english as possible.
-It must also pass the linter.
-
-This is the first file that will be run against the pydocstyle checker. If
-you've run the week5_system_prep.sh file you should be getting blue linter dots
-that show you where lintere errors are. If they aren't working, you should be
-getting the errors in the test output.
-
 Some functions will have directions as external comments, once you think you
 are on top of it, take these comments out. Others won't have comments and
 you'll need to figure out for yourself what to do.
 """
-
-
-
 
 
 # This is a terrible function. The rest of the functions in this file do a
@@ -164,17 +153,17 @@ def triangle_master(base,
 
 def wordy_pyramid():
     import requests
-    baseURL = "http://www.setgetgo.com/randomword/get.php?len="
+    baseURL = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={0}&maxLength={0}&limit=1"
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL + str(i)
+        url = baseURL.format(i)
         r = requests.get(url)
-        message = r.text
+        message = r.json()[0]['word']
         pyramid_list.append(message)
     for i in range(20, 3, -2):
-        url = baseURL + str(i)
+        url = baseURL.format(str(i))
         r = requests.get(url)
-        message = r.text
+        message = r.json()[0]['word']
         pyramid_list.append(message)
     return pyramid_list
 
