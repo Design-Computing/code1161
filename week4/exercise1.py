@@ -122,22 +122,7 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    gcode = str(open("./Trispokedovetiles(laser).gcode", 'r').read())
-    charCount = 0
-    onOffCounter = 0
-    while charCount < len(gcode):
-        if gcode[charCount:charCount+6] == "M10 P1":
-            onOffCounter += 1
-        charCount += 1
-        # print(str(charCount), str(onOffCounter))
-        # print(str(gcode[charCount:charCount+6]))
-    try:
-        os.remove("lasers.pew")
-        print('File removed!')
-    except Exception:
-        print("Hmmm didn't work... Maybe the file didn't already exist?")
-    lasersFile = open("lasers.pew", 'w+')
-    lasersFile.write(str(onOffCounter))
+    pass
 
 
 if __name__ == "__main__":
