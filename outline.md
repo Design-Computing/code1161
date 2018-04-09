@@ -182,6 +182,10 @@ Instructions:
 #### Homework Due 10/04/2018 @ 12pm
 - ensure you have completed all labs from weeks 4 and 5
 - lab books for both weeks
-- Prepare for the programming exam on 10/04/2018 at 3pm.
+- Prepare for the programming exam on 17/04/2018 at 3pm.
 
+### Week 6: Non-teaching week
 
+### Week 7: Also non-teaching week
+
+### Week 8: Exam
