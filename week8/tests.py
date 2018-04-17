@@ -19,7 +19,7 @@ from codeHelpers import test
 from codeHelpers import test_flake8
 from codeHelpers import Timeout
 
-WEEK_NUMBER = 6
+WEEK_NUMBER = 8
 testResults = []
 
 if 'week' in os.getcwd():
@@ -39,7 +39,7 @@ def exam_test(expected,
     try:
         if chdir:
             if 'week' not in os.getcwd():
-                os.chdir('./week6')
+                os.chdir('./week8')
         got = function_to_test(*args)
         if chdir:
             if 'week' in os.getcwd():
@@ -135,7 +135,7 @@ def theTests(path_to_code_to_check="."):
                   chdir=True)
         
         exam_test(True,
-                ['./week6/speedy_dict.words'],
+                ['./week8/speedy_dict.words'],
                 os.path.exists)
 
         # exam_test(True,
