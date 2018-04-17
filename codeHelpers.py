@@ -117,7 +117,7 @@ def test_pydocstyle(fileName, flags="-e"):
 def ex_runs(path, exNumber, weekNumber):
     """Check that this exercise runs at all."""
     try:
-        path = "exercise{}.py".format(exNumber)
+        # path = "exercise{}.py".format(exNumber)
         imp.load_source("exercise{}".format(exNumber), path)
         return True
     except Exception as e:
