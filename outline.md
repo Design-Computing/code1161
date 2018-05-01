@@ -205,3 +205,12 @@ Machine learning assignment to be demonstrated on 1 May 2018 in the labs.
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQTErz4xhwXpQFJ9808NHSZZKrc3Rf_g_P8yXMdMkOSmzfUHeZdFGU5hzlcQ4e_F5tADRRn5ClyAldY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
+### Week 10: Machine Learning
+#### Lecture
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRLNFC0gxS4xh2wztQmuwmPQkNmrNe4YLlYeoPOyGaTPc1sZIFL7PxSuJadvM4Cn1RyLRsEf2EgFNbV/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+#### Lab
+Machine learning assignment to be demonstrated on 1 May 2018 in the labs.
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQTErz4xhwXpQFJ9808NHSZZKrc3Rf_g_P8yXMdMkOSmzfUHeZdFGU5hzlcQ4e_F5tADRRn5ClyAldY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
