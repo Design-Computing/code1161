@@ -208,6 +208,7 @@ Machine learning assignment to be demonstrated on 1 May 2018 in the labs.
 ### Week 10: OpenData Introduction
 #### Lecture
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTXNkJCGDstDeRNc_jbHt7Y-TO1-Fj_oB1taSWwtrksUfr1RhRYwK5RmrcueLtly4EFFjoZSc9s0faB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 #### Lab
 While we are marking the projects:
 - Create a kaggle account
@@ -239,4 +240,4 @@ Guest Lecture: Rachel Bunder, Data Scientist at Solar Analytics
 
 #### Homework
 Complete this form by next Tuesday 15 May @ 12pm. These results will be used in the marking sheet.
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeG8uQ6mCdnHlZcxFKL8--oLQrL35L-nFRwH5EbswPRZ-tmhw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe gitsrc="https://docs.google.com/forms/d/e/1FAIpQLSeG8uQ6mCdnHlZcxFKL8--oLQrL35L-nFRwH5EbswPRZ-tmhw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
