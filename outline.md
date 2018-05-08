@@ -211,6 +211,7 @@ Machine learning assignment to be demonstrated on 1 May 2018 in the labs.
 
 #### Lab
 While we are marking the projects:
+
 - Create a kaggle account
 	- Fork this: https://www.kaggle.com/kanncaa1/data-sciencetutorial-for-beginners
 	- Run: 
@@ -240,4 +241,4 @@ Guest Lecture: Rachel Bunder, Data Scientist at Solar Analytics
 
 #### Homework
 Complete this form by next Tuesday 15 May @ 12pm. These results will be used in the marking sheet.
-<iframe gitsrc="https://docs.google.com/forms/d/e/1FAIpQLSeG8uQ6mCdnHlZcxFKL8--oLQrL35L-nFRwH5EbswPRZ-tmhw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe gitsrc="https://docs.google.com/forms/d/e/1FAIpQLSeG8uQ6mCdnHlZcxFKL8--oLQrL35L-nFRwH5EbswPRZ-tmhw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>	
