@@ -228,3 +228,15 @@ https://www.kaggle.com/residentmario/welcome-to-data-visualization
 - Get acquainted with pandas and matplotlib
 - Research what questions you would like to answer and datasets.
 
+### Week 11: OpenData: Deciding on a dataset and topic
+#### Lecture
+Guest Lecture: Rachel Bunder, Data Scientist at Solar Analytics
+
+#### Lab
+- Decide on a dataset or question. Might be worthwhile doing some quick exploratory data analyses. 
+- Going deeper with pandas and matplotlib
+
+
+#### Homework
+Complete this form by next Tuesday 15 May @ 12pm. These results will be used in the marking sheet.
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeG8uQ6mCdnHlZcxFKL8--oLQrL35L-nFRwH5EbswPRZ-tmhw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
