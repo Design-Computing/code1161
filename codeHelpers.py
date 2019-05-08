@@ -2,12 +2,15 @@
 """Collect up the functons used in all the weeks."""
 from colorama import Fore
 from colorama import Style
+import colorama
 import imp
 import inspect
 import os
 import signal
 import subprocess
 import threading
+
+colorama.init()
 
 
 class RunCmd(threading.Thread):
