@@ -9,7 +9,7 @@ git config --global user.name $MYNAME
 git config --global user.email $MYEMAIL
 git config --global credential.helper 'cache --timeout=36000' #cache password for 150 minutes
 git config --global color.ui auto #colour the output in git
-git config --global core.editor "atom --wait"
+git config --global core.editor "code --wait"
 
 #in case this sh has been run multiple times before
 git config --global --replace-all user.email $MYEMAIL
